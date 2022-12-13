@@ -5,7 +5,7 @@ import { bootstrapExtra } from "@workadventure/scripting-api-extra";
 console.log('Script started successfully');
 
 let currentPopup: any = undefined;
-let i:number = 0;
+var i:number = 0;
 
 // Waiting for the API to be ready
 WA.onInit().then(() => {
@@ -13,26 +13,22 @@ WA.onInit().then(() => {
     console.log('Player tags: ',WA.player.tags)
 
     WA.room.onEnterLayer('ZoneMeetA').subscribe(() => {
+        console.log
        i=i+1
-       console.log('checking the i value', i)
+    //  let players= WA.players.list()
+    //  console.log('checking the players list', players)
     })
 
     WA.room.onLeaveLayer('ZoneMeetA').subscribe(()=> {
         i=i-1
-        console.log('checking the i value', i)
-        if( i === 0 ) {
-            WA.room.setProperty('doorZoneA','door',true)            
-            console.log('checking the i inside if')
+        if( i === 0 ) {            
             WA.state.saveVariable('doorZoneA', true)
-
         }
     })
 
     WA.room.onLeaveLayer('door_open_zone1').subscribe(()=> {
         WA.chat.sendChatMessage("Bienvenue chez Menaps Famille! tu peux tout demander ici", "Mr Robot");
     })
-    let xx = WA.state.loadVariable('doorZoneA') 
-    console.log('checking the xx', xx)
 
     
 
