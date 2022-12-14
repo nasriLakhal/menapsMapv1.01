@@ -3079,13 +3079,13 @@
                         {
                          "name":"openLayer",
                          "type":"string",
-                         "value":"opened_door_zoneA"
+                         "value":"-"
                         }],
                  "rotation":0,
                  "visible":true,
                  "width":0,
-                 "x":825.666666666667,
-                 "y":566.333333333334
+                 "x":846.333333333334,
+                 "y":570.333333333334
                 }],
          "offsetx":0.333333333333258,
          "offsety":0.666666666666742,
@@ -6092,6 +6092,15 @@
          "tiles":[
                 {
                  "id":651,
+                 "properties":[
+                        {
+                         "name":"collides",
+                         "type":"bool",
+                         "value":true
+                        }]
+                }, 
+                {
+                 "id":730,
                  "properties":[
                         {
                          "name":"collides",
