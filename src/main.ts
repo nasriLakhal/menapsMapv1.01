@@ -16,11 +16,16 @@ WA.onInit()
         WA.room.onEnterLayer("ZoneMeetA").subscribe(async () => {
             await WA.players.configureTracking();
             const players = WA.players.list();
-            console.log("checking players", players);
-            for (const player of players) {
-                console.log(`Player ${player.name} is near you`);
-            }
-            i = i + 1;
+            console.log("checking players", players);    
+            let playersArray = Array.from(players)
+            console.log(playersArray.length)    
+            // for (const player of players) {
+            //     console.log(`Player ${player.name} is near you`);                
+            // }
+            // console.log('checking the variable before', WA.state.loadVariable("counter"))
+            // // let xx = WA.state.loadVariable('counter') as number; 
+            // WA.state.saveVariable("counter", 1);            
+            // console.log('checking the variable', WA.state.loadVariable("counter"))            
         });
 
         WA.room.onLeaveLayer("ZoneMeetA").subscribe(() => {
