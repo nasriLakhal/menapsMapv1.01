@@ -17,7 +17,7 @@ WA.onInit()
             await WA.players.configureTracking();
             const players = WA.players.list();
             console.log("checking players", players);    
-            let playersArray = Array.from(players)
+            // let playersArray = Array.from(players)
             // console.log(playersArray.length)    
             // for (const player of players) {
             //     console.log(`Player ${player.name} is near you`);                
